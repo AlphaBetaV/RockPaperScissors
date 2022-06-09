@@ -1,16 +1,32 @@
 const hand = ["rock", "paper", "scissors"];
+var playerWins = 0
+var computerWins = 0
+let computerPlay;
+let playerSelection;
+var validHand;
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-};
+for (y = 0; y < 5; y++) {
 
-let computerPlay = hand[getRandomInt(3)];
+    computerPlay = hand[getRandomInt(3)];
 
-let playerSelection = "rock";
-playerSelection = playerSelection.toLowerCase();
+    playerSelection = prompt("Type rock, paper, or scissors")
+    playerSelection = playerSelection.toLowerCase();
 
-var validHand = false;
-handValidator(playerSelection)
+    validHand = false;
+    handValidator(playerSelection)
+
+    playRound(playerSelection, computerPlay)
+    console.log(`player played ${playerSelection}`)
+    console.log(`computer played ${computerPlay}`)
+
+    console.log(`player wins are ${playerWins}, computer wins are ${computerWins}`)
+}
+
+if (playerWins == computerWins)
+    console.log("The result of the whole game is a tie")
+else if (playerWins > computerWins)
+    console.log("The player wins the whole game")
+else console.log("The computer wins the whole game")
 
 function playRound(playerSelection, computerPlay) {
     if (playerSelection === "") {
@@ -30,25 +46,29 @@ function handValidator(playerSelection) {
             validHand = true;
 }
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+};
+
 function result(playerSelection, computerPlay) {
     if (playerSelection == computerPlay) {
         console.log("tie game")
     }
     else if (playerSelection == hand[0] && computerPlay == hand[2]) {
-        console.log("player wins")
+        console.log(`You win ${playerSelection} beats ${computerPlay}`)
+        playerWins++;
     }
     else if (playerSelection == hand[1] && computerPlay == hand[0]) {
-        console.log("player wins")
+        console.log(`You win ${playerSelection} beats ${computerPlay}`)
+        playerWins++;
     }
     else if (playerSelection == hand[2] && computerPlay == hand[0]) {
-        console.log("player wins")
+        console.log(`You win ${playerSelection} beats ${computerPlay}`)
+        playerWins++;
     }
     else {
-        console.log("computer wins")
+        console.log(`You lose ${computerPlay} beats ${playerSelection}`)
+        computerWins++;
     }
 
 }
-
-playRound(playerSelection, computerPlay)
-console.log(`player played ${playerSelection}`)
-console.log(`computer played ${computerPlay}`)
