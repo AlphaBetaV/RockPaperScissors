@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+#top-header,
+#bot-footer {
+    display: flex;
+    box-sizing: border-box;
+    height: 10vh;
+    width: 100vw;
+    background-color: #064eb4;
+}
+
+#main-body {
+    display: flex;
+    height: 80vh;
+    width: 100vw;
+}
+
+.sides {
+    width: 10vw;
+    background-color: #150453;
+}
+
+.game-area {
+    display: flex;
+    width: 80vw;
+}
+
+.player-area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60%
+}
+
+.results-area {
+    background-color: #707275;
+    height: 100%;
+    width: 40%;
+}
+
+/*classes intentionally left blank because no further styling is needed, only necessary for JS to select these in document */
+.player,
+.computer,
+.outcome {
+
+}
+
+.player-score,
+.computer-score,
+.winner {
+    color: aliceblue;
+    margin-left: 5%;
+
+}
+
+.results {
+    color: aliceblue;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 1%;
+}
+
+.varPlayer,
+.varComputer {
+    color: aliceblue;
+}

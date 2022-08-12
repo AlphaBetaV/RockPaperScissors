@@ -6,15 +6,34 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <script src="./gameCode.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="./gameCode.js"defer></script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        Game of rock paper scissors played in developer console
-        <script>
-        </script>
+        <div id="top-header"></div>
+        <div id="main-body">
+            <div class="sides"></div>
+            <div class="game-area">
+                <div class="player-area">
+                    <button id="rock">rock</button>
+                    <button id="paper">paper</button>
+                    <button id="scissors">scissors</button>
+                    <p class="player"></p>
+                    <p class="computer"></p>
+                    <p class="outcome"></p>
+                </div>
+                <div class="results-area">
+                    <p class="results">MATCH RESULTS</p> 
+                    <p class="player-score">Player Score: <span class='varPlayer'>0</span></p>
+                    <p class="computer-score">Computer score: <span class='varComputer'>0</span></p>
+                    <p class="winner"></p>
+                </div>
+            </div>
+            <div class="sides"></div>
+        </div>
+        <div id="bot-footer"></div>
     </body>
 </html>
